@@ -30,7 +30,7 @@ function equityValues (array) {
 
 
 // 2
-function moreThatOnce (array) {
+function moreThanOnce (array) {
 	var a = [];
 	for (i = 0; i < array.length; i++) {
 		for (j = i + 1; j < array.length; j++){
