@@ -13,7 +13,7 @@ for (var i = 0; i < arr_length; i++) {
 // 1
 function equityValues (array) {
 	var a;
-	var b = "–авные значени¤ не найдены";
+	var b = "Равные значения не найдены";
 	function sortNumbers(a,b) {
 		if(a > b) return 1;
 		if(a < b) return -1;
@@ -22,7 +22,7 @@ function equityValues (array) {
 	a = a.sort(sortNumbers);
 		for (i in array)
 		if (a[i] == a[i - 1]) {
-			b = "Ќайдены равные значени¤";
+			b = "Найдены равные значения";
 			break;
 		}
 	return b
