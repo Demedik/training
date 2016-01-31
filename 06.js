@@ -9,7 +9,6 @@ for (var i = 0; i < arr_length; i++) {
 	arr [i] = randomInteger(-20,20)
 }
 
-
 // 1
 function equityValues (array) {
 	var a;
@@ -28,21 +27,24 @@ function equityValues (array) {
 	return b
 }
 
-
 // 2
 function moreThanOnce (array) {
-	var a = [];
-	for (i = 0; i < array.length; i++) {
-		for (j = i + 1; j < array.length; j++){
-			if (array[i] === array[j]) {
-				a.push(array[i]);
-				break;
-			}							
-		}
+	var obj = {};
+	var arr = [];
+	for (i in array) {
+		if (obj[array[i]] != undefined) {
+		obj[array[i]]++;
 	}
-	return a
+	else ( obj[array[i]] = 1)
+	}
+	for (i in array) {
+		if (arr.indexOf(array[i]) == -1){
+				if (obj[array[i]] > 1)
+				arr.push(array[i]);
+			}
+		}
+	return arr
 }
-
 
 // 3
 function minus (array) {
