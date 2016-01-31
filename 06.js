@@ -35,7 +35,7 @@ function moreThanOnce (array) {
 	for (i = 0; i < array.length; i++) {
 		for (j = i + 1; j < array.length; j++){
 			if (array[i] === array[j]) {
-				a.push(array[i])
+				a.push(array[i]);
 				break;
 			}							
 		}
@@ -46,10 +46,10 @@ function moreThanOnce (array) {
 
 // 3
 function minus (array) {
-	var a = 0
+	var a = 0;
 	for (i in array) {
 		if (array[i] < 0){
-		a++
+		a++;
 		}
 	}
 	return a
@@ -60,7 +60,7 @@ function minusValues (array){
 	var a = [] 
 	for (i in array) { 
 		if (array[i] < 0) { 
-		a.push(array[i]) 
+		a.push(array[i]); 
 		} 
 	} 
 return a 
@@ -69,25 +69,25 @@ return a
 // 4
 function minIndex (array) {
 	"use strict"
-	var a = []
+	var a = [];
 	function sortNumbers(a,b) {
 		if(a > b) return 1;
 		if(a < b) return -1;
 	}
-	a = array.slice()
-	a = a.sort(sortNumbers)
-	a = a[0]
-	a = array.indexOf(a)
+	a = array.slice();
+	a = a.sort(sortNumbers);
+	a = a[0];
+	a = array.indexOf(a);
 	return a
 
 }
 
 // 5
 function divSeven (array) {
-	var a = 0
+	var a = 0;
 	for (i = 0; i < array.length; i++) {
 		if (array[i] % 7 == 0) {
-		a++
+		a++;
 		}
 	}
 	return a
@@ -95,11 +95,11 @@ function divSeven (array) {
 
 // 6
 function match (array1,array2) {
-	var a = 0
+	var a = 0;
 	for (i = 0; i < array1.length; i++) {
 		for (j = 0; j < array2.length; j++) {
 			if (array1[i] == array2[j]) {
-				a++
+				a++;
 			}
 		}	
 	}	
