@@ -102,6 +102,7 @@ function match (array1,array2) {
 		for (j = 0; j < array2.length; j++) {
 			if (array1[i] == array2[j]) {
 				a++;
+				break;
 			}
 		}	
 	}	
