@@ -19,7 +19,7 @@ function equityValues (array) {
 	}
 	a = array.slice();
 	a = a.sort(sortNumbers);
-		for (i in array)
+	for (i in array)
 		if (a[i] == a[i - 1]) {
 			b = "Найдены равные значения";
 			break;
