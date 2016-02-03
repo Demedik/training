@@ -87,7 +87,7 @@ function minIndex (array) {
 // 5
 function divSeven (array) {
 	var a = 0;
-	for (i = 0; i < array.length; i++) {
+	for (var i = 0; i < array.length; i++) {
 		if (array[i] % 7 == 0) {
 		a++;
 		}
@@ -98,7 +98,7 @@ function divSeven (array) {
 // 6
 function match (array1,array2) {
 	var a = 0;
-	for (i = 0; i < array1.length; i++) {
+	for (var i = 0; i < array1.length; i++) {
 		for (j = 0; j < array2.length; j++) {
 			if (array1[i] == array2[j]) {
 				a++;
@@ -111,8 +111,8 @@ function match (array1,array2) {
 // 6 Вывод значений, которые повторяются
 function matchResult (array1,array2) { 
 	var a = [] 
-	for (i = 0; i < array1.length; i++) { 
-		for (j = 0; j < array2.length; j++) { 
+	for (var i = 0; i < array1.length; i++) { 
+		for (var j = 0; j < array2.length; j++) { 
 			if (array1[i] == array2[j]) { 
 				if (a.indexOf(array1[i]) ==  -1) {
 					a.push(array1[i]);
