@@ -54,16 +54,16 @@ function sortArraySpiralFw(array) {
 	var arr = [];
 	for (var a = 0; a <= (array.length - 1) / 2; a++) {
 		var i
-		for (i = (0 + a); i < (array[0 + a].length - a); i++) {
+		for (i = 0 + a; i < array[0 + a].length - a; i++) {
 			arr.push(array[0 + a][i])
 		}
-		for (i = (1 + a); i < (array[0 + a].length - a); i++){
+		for (i = 1 + a; i < array[0 + a].length - a; i++){
 			arr.push(array[i][array[i].length - 1 - a])
 		}
-		for (i = (array[array.length - 1 - a].length - 2 - a); i >= (0 + a); i--){
+		for (i = array[array.length - 1 - a].length - 2 - a; i >= 0 + a; i--){
 			arr.push(array[array.length - 1 - a][i])
 		}
-		for (i = (array[0].length - 2 - a); i >= (1 + a); i--) {
+		for (i = array[0].length - 2 - a; i >= 1 + a; i--) {
 			arr.push(array[i][0 + a])
 		}
 	}
