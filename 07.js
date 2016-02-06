@@ -44,7 +44,7 @@ function sortArrayRev(array) {
 	for (i = array[array.length - 1].length - 2; i >= 0; i--){
 		arr.push(array[i][array[i].length - 1])
 	}
-	for (i = array[0].length - 2; i >= 1; i--) {
+	for (i = array.length - 2; i >= 1; i--) {
 		arr.push(array[0][i])
 	}	
 	return arr
