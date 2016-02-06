@@ -20,13 +20,13 @@ function sortArrayFw(array) {
 	for (i = 0; i < array[0].length; i++) {
 		arr.push(array[0][i])
 	}
-	for (i = 1; i < array[0].length; i++){
+	for (i = 1; i < array.length; i++){
 		arr.push(array[i][array[i].length - 1])
 	}
 	for (i = array[array.length - 1].length - 2; i >= 0; i--){
 		arr.push(array[array.length - 1][i])
 	}
-	for (i = array[0].length - 2; i >= 1; i--) {
+	for (i = array.length - 2; i >= 1; i--) {
 		arr.push(array[i][0])
 	}
 	return arr
@@ -41,14 +41,14 @@ function sortArrayRev(array) {
 	for (i = 1; i < array[array.length - 1].length; i++){
 		arr.push(array[array.length - 1][i])
 	}
-	for (i = array[array.length - 1].length - 2; i >= 0; i--){
+	for (i = array.length - 2; i >= 0; i--){
 		arr.push(array[i][array[i].length - 1])
 	}
-	for (i = array.length - 2; i >= 1; i--) {
+	for (i = array[0].length - 2; i >= 1; i--) {
 		arr.push(array[0][i])
 	}	
 	return arr
-}	
+}
 
 function sortArraySpiralFw(array) {
 	var arr = [];
