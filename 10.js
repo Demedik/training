@@ -10,8 +10,12 @@ var seaFight = {
 		return this.field = arr
 	},
 	
+//	lengthOfBattlefield: function () {
+//	return 	'Поле боя равно ' + this.field.length + ' на ' + this.field[0].length + '.'
+//	},
+
 	lengthOfBattlefield: function () {
-	return 	'Поле боя равно ' + this.field.length + ' на ' + this.field[0].length + '.'
+		this.setBattlefield(prompt());
 	},
 	
 	verificationOfValues: function (a,b) {
