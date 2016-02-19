@@ -31,12 +31,12 @@ function Accumulator (){
 	this.sumTo = function (a) {
 		accum = accum + a;		
 		lastNumber = a;
-		return "Саккумулированное значение = " + accum
+		return "РЎР°РєРєСѓРјСѓР»РёСЂРѕРІР°РЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ = " + accum
 	}
 	this.showLastNumber = function() {
-		return "Последние значение = " + lastNumber
+		return "РџРѕСЃР»РµРґРЅРёРµ Р·РЅР°С‡РµРЅРёРµ = " + lastNumber
 	}
 	this.showAccumulatedNumber = function (){
-		return "Саккумулированное значение = " + accum
+		return "РЎР°РєРєСѓРјСѓР»РёСЂРѕРІР°РЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ = " + accum
 	}
 }
