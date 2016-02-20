@@ -1,9 +1,16 @@
 function Calc () {
 	
 	var a,b;
-	this.setNumbers = function (first,second) {
-		a = +prompt(first);
-		b = +prompt(second)
+	this.setNumbers = function () {
+		var c = +prompt(c);
+		var d = +prompt(d)
+		if (isNaN(c) === false && isNaN(d) === false) {
+			a = c
+			b = d
+		} else {
+			console.log("Проверте значения и повторите ввод")
+			return this.setNumbers()
+		}
 		return this
 	}
 	this.sumTo = function () {
@@ -20,8 +27,7 @@ function Calc () {
 		return c
 	}
 	this.addNewFunc = function (nameFunc,func) {
-		this[nameFunc] = func
-		return this
+		return this[nameFunc] = func
 	}
 }
 
