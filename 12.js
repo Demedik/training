@@ -83,7 +83,7 @@ function Fridge (power){
 
 var a = new Fridge(1000)
 a.enable()
-a.addFood({title:"кашка",calories:90,value: 3},{title:"малашка",calories:100,value: 5},{title:"какашка",calories:1000,value: 6},{title:"хлопья",calories:50,value: 1})
+a.addFood({title:"Молоко",calories:90,value: 3},{title:"Суп",calories:100,value: 5},{title:"Колбаса",calories:1000,value: 6},{title"Хлопья",calories:50,value: 1})
 /*var b = a.getFood()
 b.push({title:"ложка",calories:0},{title:"вилка",calories:0})
 a.showFood()
