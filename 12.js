@@ -90,4 +90,4 @@ a.showFood()
 console.table(b)
 var c = new Fridge(200)
 c.addFood({title:"кашка",calories:90},{title:"малашка",calories:100})*/
-
+//http://learn.javascript.ru/functional-inheritance
