@@ -1,10 +1,10 @@
 function Machine (power) {
 	this._machineOn = false; 
 	this.enable = function () {
-		(this._machineOn === false) ? this._machineOn = true : console.log("Уже включена");
+		(this._machineOn === false) ? this._machineOn = true : console.log("Уже включен");
 	};
 	this.disable = function () {
-		(this._machineOn === true) ? this._machineOn = false : console.log("Уже выключена"); 
+		(this._machineOn === true) ? this._machineOn = false : console.log("Уже выключен"); 
 	};
 	this.power = power
 }
@@ -40,21 +40,21 @@ function CoffieMachine (power) {
 }
 
 function Fridge (power){
-	var food = []
+	var food = [];
 	Machine.apply(this,arguments);
+	var parentDisable = this.disable.bind(this)
+	this.disable = function(){
+		if (food.length === 0){
+			parentDisable();
+		} else {
+			throw new Error("В холодильнике есть еда.")
+		}
+	}
 	this.addFood = function(){
 		if(this._machineOn){
 			for (i in arguments){
 				if (power/100 > food.length){
-					//for (j in food){
-						//if (food[j]["title"] === arguments[i]["title"]){
-						//	food[j]["value"] = food[j]["value"] + arguments[i]["value"];
-						//	break
-						//	}
-						//	else if (j == food.length - 1){
-							food.push(arguments[i])
-						//}
-					//}	
+					food.push(arguments[i])
 				} else {
 					console.table(food);
 					throw new Error("Холодильник переполнен")
@@ -62,13 +62,6 @@ function Fridge (power){
 			}
 		} else {
 			throw new Error("Холодильник выключен")
-		}
-	}
-	this.removeFood = function (gF){
-		for (i in food){
-			if (food[i]["title"] === gF["title"]) {
-				return food.splice(i,1)
-			}
 		}
 	}
 	this.showFood = function(){
@@ -79,15 +72,14 @@ function Fridge (power){
 		var a = food.slice()
 		return a
 	}
+	this.removeFood = function (gF){
+		for (i in food){
+			if (food[i]["title"] === gF["title"]) {
+				return food.splice(i,1)
+			}
+		}
+	}
+	this.filterFood = function(item) {
+		return food.filter(item);
+	};
 }
-
-var a = new Fridge(1000)
-a.enable()
-a.addFood({title:"Молоко",calories:90,value: 3},{title:"Суп",calories:100,value: 5},{title:"Колбаса",calories:1000,value: 6},{title"Хлопья",calories:50,value: 1})
-/*var b = a.getFood()
-b.push({title:"ложка",calories:0},{title:"вилка",calories:0})
-a.showFood()
-console.table(b)
-var c = new Fridge(200)
-c.addFood({title:"кашка",calories:90},{title:"малашка",calories:100})*/
-//http://learn.javascript.ru/functional-inheritance
