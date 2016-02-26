@@ -35,6 +35,7 @@ function Horse (horseName) {
 				return console.log ("Общий пробег составил " + this.mileage + " км.")
 			}
 			this.mileage++
+			this.__proto__.hellRun++;
 		}	
 	}
 }
