@@ -2,24 +2,9 @@
 	var setMsg = function (array,a,b,message){
 		array[a][b].msg = message;
 	};
-	var aiTargets = [[],[],[],[]];
 	var validOfValues = function (array,a,b) {
-		return (typeof a === "number" && typeof b = "number" && array != undefined && array[a] != undefined && array[a][b] != undefined) ? true : false			
+		 (typeof a === "number" && typeof b === "number" && array != undefined && array[a] != undefined && array[a][b] != undefined) ? true : false			
 	};
-	this.setBattlefield = function (length){
-		var arr = [];
-		for (var i = 0; i < length; i++) {
-			arr[i] = [];
-			for (var j = 0; j < length; j++) {
-				arr[i].push({ship: false, opened: false, msg: "Промазал!", lengthOfShip: 0});
-				};
-		};
-		return this.field = arr
-	};
-	this.lengthOfBattlefield = function () {
-		this.setBattlefield(prompt());
-	};
-	
 	this.putShip = function (a,b,orientation,length) {
 		if (validOfValues(this.field,a,b)){
 			if(orientation === 'horizontal' || orientation === 'h'){
@@ -54,15 +39,30 @@
 			return 'Введенные координаты не существуют'	
 		};
 	};
-	this.hasShips = function(){
-		for (var i = 0; i < this.field.length; i++){
-			for (var j = 0; j < this.field[i].length; j++){
-				if (this.field[i][j].ship === true && this.field[i][j].opened === false){
-					return 'У противника остались корабли.'
-				} else {
-					return 'Все корабли противника уничтожены.'
-				};
+}	
+
+SeaFight.prototype.setBattlefield = function (length){
+	var arr = [];
+	for (var i = 0; i < length; i++) {
+		arr[i] = [];
+		for (var j = 0; j < length; j++) {
+			arr[i].push({ship: false, opened: false, msg: "Промазал!", lengthOfShip: 0});
+		};
+	};
+	return this.field = arr
+	};
+SeaFight.prototype.lengthOfBattlefield = function () {
+	this.setBattlefield(prompt());
+};
+
+SeaFight.prototype.hasShips = function(){
+	for (var i = 0; i < this.field.length; i++){
+		for (var j = 0; j < this.field[i].length; j++){
+			if (this.field[i][j].ship === true && this.field[i][j].opened === false){
+				return 'У противника остались корабли.'
+			} else {
+				return 'Все корабли противника уничтожены.'
 			};
 		};
 	};
-}	
+};
