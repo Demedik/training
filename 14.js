@@ -4,10 +4,9 @@ function sumTo (a) {
 		sum += b;
 		return sumNext
 	};
-	sumNext.valueOf = function (){
+	sumNext.toString = function (){
 		console.log(sum);
 		return sum
 	};
-	sumNext.toString = sumNext.valueOf;
 	return sumNext
 }
